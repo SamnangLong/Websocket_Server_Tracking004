@@ -179,7 +179,7 @@ let telegramSelfUser;
 
     telegramSelfUser = await telegramClient.getEntity(targetPersonalUsername);
     console.log("✅ Logged in as:", telegramSelfUser.username || telegramSelfUser.id);
-    console.log("🔐 SESSION STRING:\n", telegramClient.session.save());
+    // console.log("🔐 SESSION STRING:\n", telegramClient.session.save());
 
     const dialogs = await telegramClient.getDialogs();
     const group = dialogs.find((d) => d.id.toString() === targetGroupId001);
@@ -232,3 +232,4 @@ let telegramSelfUser;
     process.exit(1);
   }
 })();
+
