@@ -98,11 +98,11 @@ wss.on("connection", (ws, req) => {
 
     console.log(`🔴 Client disconnected: ${clientId} (${ip}) (Total: ${clients.size - 1})`);
 
-    if (telegramSelfUser) {
-      telegramClient.sendMessage(telegramSelfUser, {
-        message: `🔴 Client disconnected: ${clientId} (${ip}) (Total: ${clients.size - 1})`
-      });
-    }
+    // if (telegramSelfUser) {
+    //   telegramClient.sendMessage(telegramSelfUser, {
+    //     message: `🔴 Client disconnected: ${clientId} (${ip}) (Total: ${clients.size - 1})`
+    //   });
+    // }
 
     clients.delete(clientId);
   });
@@ -232,4 +232,5 @@ let telegramSelfUser;
     process.exit(1);
   }
 })();
+
 
