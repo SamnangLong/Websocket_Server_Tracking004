@@ -75,11 +75,11 @@ wss.on("connection", (ws, req) => {
 
         console.log(`🟢 Client registered: ${locationDevice} (${metadata.ip}) (Total: ${clients.size})`);
 
-        if (telegramSelfUser) {
-          telegramClient.sendMessage(telegramSelfUser, {
-            message: `🟢 Client registered: ${locationDevice} (${metadata.ip}) (Total: ${clients.size})`
-          });
-        }
+        // if (telegramSelfUser) {
+        //   telegramClient.sendMessage(telegramSelfUser, {
+        //     message: `🟢 Client registered: ${locationDevice} (${metadata.ip}) (Total: ${clients.size})`
+        //   });
+        // }
       } else if (data.type === "heartbeat") {
         metadata.lastSeen = new Date();
         console.log(`💓 Heartbeat from ${clientId} (${metadata.ip})`);
@@ -232,5 +232,6 @@ let telegramSelfUser;
     process.exit(1);
   }
 })();
+
 
 
